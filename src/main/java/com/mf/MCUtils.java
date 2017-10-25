@@ -101,7 +101,4 @@ public class MCUtils {
 
         app = device.describe(Application.class, localAppDescription);
     }
-
-    public void test1()
-    {}
 }
