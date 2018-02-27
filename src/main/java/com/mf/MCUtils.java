@@ -22,8 +22,8 @@ public class MCUtils {
 
     private ApplicationDescription[] appDescription = new ApplicationDescription[1];
 
-    public void MCUtils()
-    {}
+    public void MCUtils() {
+    }
 
     public void windowSync(long millseconds) throws InterruptedException { Thread.sleep(millseconds); }
 
