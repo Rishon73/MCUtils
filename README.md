@@ -6,7 +6,7 @@ This package contains:
 ## Deployment
 If you wish to just use the file and not compile it yourself, then use Maven to add the .\jars\utils-1.1.jar to your local .m2 cache using<br>
 ```
-mvn install:install-file -Dfile="<path>\jars\utils-1.1jar" -DgroupId=com.mf -DartifactId=utils -Dversion=1.1 -Dpackaging=jar
+mvn install:install-file -Dfile="<path>\jars\utils-1.1.jar" -DgroupId=com.mf -DartifactId=utils -Dversion=1.1 -Dpackaging=jar
 ```
 
 ### com.mf.utils.LabDevice
