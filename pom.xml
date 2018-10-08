@@ -3,14 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <properties>
+        <lft.ver>14.50.0</lft.ver>
+    </properties>
 
     <groupId>com.mf</groupId>
     <artifactId>utils</artifactId>
-    <version>1.1</version>
+    <version>${lft.ver}</version>
 
-    <properties>
-        <lft.ver>14.3.0</lft.ver>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>com.hp.lft</groupId>
