@@ -4,8 +4,10 @@ This package contains:
 * com.mf.utils.Logging
 
 ## Deployment
-If you wish to just use the file and not compile it yourself, then use Maven to add the jar file to your local .m2 cache using<br>
-Download the latest utils-<version>.jar file from https://github.com/Rishon73/MCUtils/releases and run the maven install command below:<br>
+The recommended deployment is to use the Maven install option. From the Maven tool window select and execute the 'Install' Lifecycle option, this will use the POM file to place the .jar file at                                     the right place in your .m2 repository.<p>
+
+But if you wish to just use the file and not compile it yourself, then use Maven to add the jar file to your local .m2 cache using<br>
+Download the latest utils-\<version\>.jar file from https://github.com/Rishon73/MCUtils/releases and run the maven install command below:<br>
 ```
 mvn install:install-file -Dfile="<path>\jars\utils-<version>.jar" -DgroupId=com.mf -DartifactId=utils -Dversion=<version> -Dpackaging=jar
 ```
