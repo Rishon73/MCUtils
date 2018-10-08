@@ -1,15 +1,16 @@
 # MCUtils
 This package contains:
-* com.mf.utils.LabDevice
+* com.mf.utils.MobileLabUtils
 * com.mf.utils.Logging
 
 ## Deployment
-If you wish to just use the file and not compile it yourself, then use Maven to add the .\jars\utils-1.1.jar to your local .m2 cache using<br>
+If you wish to just use the file and not compile it yourself, then use Maven to add the jar file to your local .m2 cache using<br>
+Download the latest utils-<version>.jar file from https://github.com/Rishon73/MCUtils/releases and run the maven install command below:<br>
 ```
-mvn install:install-file -Dfile="<path>\jars\utils-1.1.jar" -DgroupId=com.mf -DartifactId=utils -Dversion=1.1 -Dpackaging=jar
+mvn install:install-file -Dfile="<path>\jars\utils-<version>.jar" -DgroupId=com.mf -DartifactId=utils -Dversion=<version> -Dpackaging=jar
 ```
 
-### com.mf.utils.LabDevice
+### com.mf.utils.MobileLabUtils
 This class helps to streamline allocation of a device from a Mobile Center or StormRunner Functional lab.
 
 Key capabilities:
@@ -24,12 +25,12 @@ Example usage:<br>
 ***NOTE*** the below code snippet is utilizing Junit.
 ```
 ...
-import com.mf.LabDevice;
+import com.mf.utils;
 ...
 
     //Not required to be private but good practice for using as a global within a class
-    private LabDevice.LabType labType = LabDevice.LabType.SRF;
-    private LabDevice labDevice = new LabDevice();
+    private MobileLabUtils.LabType labType = MobileLabUtils.LabType.SRF;
+    private MobileLabUtils labDevice = new MobileLabUtils();
 
     ...
 
@@ -58,7 +59,7 @@ import com.mf.LabDevice;
             deviceDescription.setModel("iPhone 5s (GSM)");
             deviceDescription.set("testName", "Mobile AOS");
 
-            labDevice.lockDevice(deviceDescription, LabDevice.LabType.SRF);
+            labDevice.lockDevice(deviceDescription, MobileLabUtils.LabType.SRF);
 
             if (labDevice.getDevice() != null) {
                 appModel = new AppModelAOS_iOS(labDevice.getDevice());
@@ -86,14 +87,14 @@ import com.mf.LabDevice;
         if (System.getProperty("lab") != null){
             switch (System.getProperty("lab")){
                 case "MC":
-                    this.labType = LabDevice.LabType.MC;
+                    this.labType = MobileLabUtils.LabType.MC;
                     break;
                 case "SRF":
-                    this.labType = LabDevice.LabType.SRF;
+                    this.labType = MobileLabUtils.LabType.SRF;
                     break;
                 default:
-                    this.labType = LabDevice.LabType.UNKNOWN;
-                    if (labType == LabDevice.LabType.UNKNOWN){
+                    this.labType = MobileLabUtils.LabType.UNKNOWN;
+                    if (labType == MobileLabUtils.LabType.UNKNOWN){
                         logging.logMessages("Unknown mobile device lab.  Passed in: "+System.getProperty("lab"),LOG_LEVEL.ERROR);
                         Assert.fail();
                     }
