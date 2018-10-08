@@ -10,7 +10,9 @@ public class Logging {
     Log messages to std output and lft report.
     This method also uses the lft reporting classes
     */
-    public void logMessages(String message, LOG_LEVEL level) {
+    public static void Logging(){}
+
+    public static void logMessage(String message, LOG_LEVEL level) {
         String prefix = (level == LOG_LEVEL.INFO) ? "[INFO] " : "[ERROR] ";
         Status status = (level == LOG_LEVEL.INFO) ? Status.Passed : Status.Failed;
         System.out.println(prefix + " [" + getTimeStamp("dd/MM/yyyy HH:mm:ss") + "] " + message);
@@ -24,7 +26,7 @@ public class Logging {
     /*
     Private method for time formatting
     */
-    private String getTimeStamp(String pattern) {
+    private static String getTimeStamp(String pattern) {
         return new java.text.SimpleDateFormat(pattern).format(new java.util.Date());
     }
 }
