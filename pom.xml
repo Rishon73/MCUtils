@@ -9,7 +9,7 @@
 
     <groupId>com.mf</groupId>
     <artifactId>utils</artifactId>
-    <version>${lft.ver}</version>
+    <version>1.2-${lft.ver}</version>
 
     <dependencies>
         <dependency>
