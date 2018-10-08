@@ -19,27 +19,6 @@ public class MobileLabUtils {
     private ApplicationDescription[] appDescription = new ApplicationDescription[1];
 
     /*
-    Lock device by Device Description, and device source (MC/ADF)
-    */
-//    public void lockDevice(DeviceDescription deviceDescription, DeviceSource deviceSource, LabType labType)  throws GeneralLeanFtException{
-//        String msg="unknown";
-//
-//        Logging.logMessage ("Init device capabilities...", Logging.LOG_LEVEL.INFO);
-//        switch (labType){
-//            case MC:
-//                this.device = MobileLab.lockDevice(deviceDescription, this.appDescription, deviceSource);
-//                msg = "MC";
-//                break;
-//            case SRF:
-//                this.device = SrfLab.lockDevice(deviceDescription, this.appDescription, deviceSource);
-//                msg = "SRF";
-//                break;
-//        }
-//        Logging.logMessage("Locking "+msg+" device name: "+ this.getDevice().getName()+ " ID: "+this.getDevice().getId(), Logging.LOG_LEVEL.INFO);
-//        Logging.logMessage ("Exit lockDevice(DeviceDescription, DeviceSource)", Logging.LOG_LEVEL.INFO);
-//    }
-
-    /*
     Lock device by Device Description
     */
     public void lockDevice(DeviceDescription deviceDescription, LabType labType)  throws GeneralLeanFtException{
