@@ -127,10 +127,11 @@ After importing to your project<br>
 import com.mf.utils.Logging.*;
 ```
 public class LeanFtTest extends UnitTestClassBase {
-    Logging logging = new Logging(); // Global for the test class
+    // Logging class is now Static, which means no need to create a logging object
+    // Logging logging = new Logging(); // Global for the test class
 
     ...
 
-    logging.logMessages ("Your message goes here", LOG_LEVEL.INFO);
-    logging.logMessages ("Your message goes here", LOG_LEVEL.ERROR);
+    Logging.logMessage ("Your message goes here", Logging.LOG_LEVEL.INFO);
+    Logging.logMessage ("Your message goes here", Logging.LOG_LEVEL.ERROR);
 ```
