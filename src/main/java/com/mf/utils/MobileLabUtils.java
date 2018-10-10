@@ -95,7 +95,6 @@ public class MobileLabUtils {
     public void setUninstallApp(boolean uninstallApp) {
         this.uninstallApp = uninstallApp;
     }
-
     public boolean isUninstallApp() {
         return uninstallApp;
     }
@@ -103,7 +102,6 @@ public class MobileLabUtils {
     public void setHighlight(boolean highlight) {
         this.highlight = highlight;
     }
-
     public boolean isHighlight() {
         return highlight;
     }
@@ -111,7 +109,6 @@ public class MobileLabUtils {
     public void setPackaged(boolean packaged){
         this.packaged = packaged;
     }
-
     public boolean isPackaged() {
         return packaged;
     }
@@ -119,7 +116,6 @@ public class MobileLabUtils {
     public void setAppIdentifier(String appIdentifier) {
         this.appIdentifier = appIdentifier;
     }
-
     public String getAppIdentifier() {
         return this.appIdentifier;
     }
@@ -127,14 +123,12 @@ public class MobileLabUtils {
     public void setAppVersion(String appVersion) {
         this.appVersion = appVersion;
     }
-
     public String getAppVersion() { return this.appVersion; }
 
     public void setDevice(Device device) {
         this.device = device;
     }
-    public Device getDevice(){
-        return this.device;
-    }
+    public Device getDevice(){ return this.device;  }
 
+    public void windowSync(int milliseconds) throws InterruptedException { Thread.sleep(milliseconds);  }
 }

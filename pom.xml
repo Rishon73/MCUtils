@@ -5,11 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <properties>
         <lft.ver>14.50.0</lft.ver>
+        <utils.ver>1.3</utils.ver>
     </properties>
 
     <groupId>com.mf</groupId>
     <artifactId>utils</artifactId>
-    <version>1.2-${lft.ver}</version>
+    <version>${utils.ver}-${lft.ver}</version>
 
     <dependencies>
         <dependency>
