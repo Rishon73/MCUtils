@@ -1,31 +1,41 @@
 # MCUtils
-This package contains:
-* com.mf.utils.MobileLabUtils
-* com.mf.utils.Logging
+This package contains some useful device and apps management methods we repeatably use in our LeanFT mobile scripts (iOS and Android).
+It’ll work for Mobile Center and SromRunner Functional
+
+It contains 2 classes:
+* __com.mf.utils.MobileLabUtils__ – manage devices and apps to be used as well the lab that will execute the test
+* __com.mf.utils.Logging__ - standardizing logging to console
 
 ## Deployment
-The recommended deployment is to use the Maven install option. From the Maven tool window select and execute the 'Install' Lifecycle option, this will use the POM file to place the .jar file at                                     the right place in your .m2 repository.<p>
+The recommended way to deploy this jar file is to use the Maven install. 
+This can be done either manually or from the Maven Project window in your IDE. 
 
-But if you wish to just use the file and not compile it yourself, then use Maven to add the jar file to your local .m2 cache using<br>
-Download the latest utils-\<version\>.jar file from https://github.com/Rishon73/MCUtils/releases and run the maven install command below:<br>
-```
+### Manual
+Download the latest _utils-\<version>\.jar_ file from https://github.com/Rishon73/MCUtils/releases and un the maven install command below:
+```bash
 mvn install:install-file -Dfile="<path>\jars\utils-<version>.jar" -DgroupId=com.mf -DartifactId=utils -Dversion=<version> -Dpackaging=jar
 ```
 
+### Auto
+Clone MCUtils to your working environment and open it in your IDE's, from the Maven Project window > Lifecycle > install
+
+---
+
 ### com.mf.utils.MobileLabUtils
 This class helps to streamline allocation of a device from a Mobile Center or StormRunner Functional lab.
+It allows you to specify the the device type and application you wish to have installed on the device.
 
 Key capabilities:
 * Lock device by device description
 * Lock device by device ID
+* Select app by app identifier and version
 
 ### com.mf.utils.Logging
 This class helps in providing a consistent logging capability to send messages to standard out and the UFT Pro (LeanFT) reporting class.
-This class allows you to specify the the device type and application you wish to have installed on the device.
 
 Example usage:<br>
 ***NOTE*** the below code snippet is utilizing Junit.
-```
+```java
 ...
 import com.mf.utils;
 ...
@@ -61,7 +71,7 @@ import com.mf.utils;
             deviceDescription.setModel("iPhone 5s (GSM)");
             deviceDescription.set("testName", "Mobile AOS");
 
-            labDevice.lockDevice(deviceDescription, MobileLabUtils.LabType.SRF);
+            labDevice.lockDevice(deviceDescription, this.labType);
 
             if (labDevice.getDevice() != null) {
                 appModel = new AppModelAOS_iOS(labDevice.getDevice());
@@ -125,7 +135,7 @@ import com.mf.utils;
 Example usage:<br>
 After importing to your project<br>
 import com.mf.utils.Logging.*;
-```
+```java
 public class LeanFtTest extends UnitTestClassBase {
     // Logging class is now Static, which means no need to create a logging object
     // Logging logging = new Logging(); // Global for the test class
