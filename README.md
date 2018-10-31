@@ -1,4 +1,4 @@
-# MCUtils
+# MobileUtilities
 This package contains some useful device and apps management methods we repeatably use in our LeanFT mobile scripts (iOS and Android).
 It’ll work for Mobile Center and SromRunner Functional
 
@@ -11,13 +11,15 @@ The recommended way to deploy this jar file is to use the Maven install.
 This can be done either manually or from the Maven Project window in your IDE. 
 
 ### Manual
-Download the latest _utils-\<version>\.jar_ file from https://github.com/Rishon73/MCUtils/releases and un the maven install command below:
+Download the latest _MobileUtilities-\<version>\.jar_ file from https://github.com/Rishon73/MobileUtilities/releases and un the maven install command below:
 ```bash
-mvn install:install-file -Dfile="<path>\jars\utils-<version>.jar" -DgroupId=com.mf -DartifactId=utils -Dversion=<version> -Dpackaging=jar
+mvn install:install-file -Dfile="<path>\jars\MobileUtilities-<version>.jar" -DgroupId=com.mf -DartifactId=MobileUtilities -Dversion=<version> -Dpackaging=jar
 ```
 
 ### Auto
-Clone MCUtils to your working environment and open it in your IDE's, from the Maven Project window > Lifecycle > install
+Clone MobileUtilities to your working environment and open it in your IDE's, from the Maven Project window > Lifecycle > install. 
+
+__Note: this option is the recommended approach since MobileUtilities project may be updated and the jar file in this project may not__
 
 ---
 
