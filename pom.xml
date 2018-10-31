@@ -9,7 +9,7 @@
     </properties>
 
     <groupId>com.mf</groupId>
-    <artifactId>utils</artifactId>
+    <artifactId>MobileUtilities</artifactId>
     <version>${utils.ver}-${lft.ver}</version>
 
     <dependencies>
