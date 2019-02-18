@@ -15,6 +15,7 @@ public class Logging {
     public static void logMessage(String message, LOG_LEVEL level) {
         String prefix = (level == LOG_LEVEL.INFO) ? "[INFO] " : "[ERROR] ";
         Status status = (level == LOG_LEVEL.INFO) ? Status.Passed : Status.Failed;
+        message = message + "[Thread ID: "+Thread.currentThread().getId()+"]";
         System.out.println(prefix + " [" + getTimeStamp("dd/MM/yyyy HH:mm:ss") + "] " + message);
         try {
             Reporter.reportEvent(prefix, message, status);
