@@ -34,8 +34,8 @@ public class MobileLabUtils {
                 msg = "SRF";
                 break;
         }
-        Logging.logMessage("Locking "+msg+" device name: "+ this.getDevice().getName()+ " ID: "+this.getDevice().getId(), Logging.LOG_LEVEL.INFO);
-        Logging.logMessage ("Exit lockDevice(DeviceDescription)", Logging.LOG_LEVEL.INFO);
+        Logging.logMessage("Locking "+msg+" device name: "+ this.getDevice().getName()+
+                " ID: "+this.getDevice().getId(), Logging.LOG_LEVEL.INFO);
     }
 
     /*
@@ -55,8 +55,8 @@ public class MobileLabUtils {
                 msg = "SRF";
                 break;
         }
-        Logging.logMessage("Locking "+msg+" device name: "+ this.getDevice().getName()+ " ID: "+this.getDevice().getId(), Logging.LOG_LEVEL.INFO);
-        Logging.logMessage ("Exit lockDeviceById(deviceId)", Logging.LOG_LEVEL.INFO);
+        Logging.logMessage("Locking "+msg+" device name: "+ this.getDevice().getName()+
+                " ID: "+this.getDevice().getId(), Logging.LOG_LEVEL.INFO);
     }
 
     /*
@@ -64,10 +64,7 @@ public class MobileLabUtils {
     This method uses the public IS_PACKAGED, APP_VERSION and APP_IDENTIFIER members to identify the app
     */
     public void setApp() throws GeneralLeanFtException{
-        ApplicationDescription localAppDescription = new ApplicationDescription.Builder().identifier(appIdentifier).
-                packaged(isPackaged()).version(appVersion).build();
-
-        app = device.describe(Application.class, localAppDescription);
+        setApp(this.appIdentifier, this.appVersion, this.packaged);
     }
 
     /*
@@ -78,12 +75,10 @@ public class MobileLabUtils {
         ApplicationDescription localAppDescription = new ApplicationDescription.Builder().identifier(appIdentifier).
                 packaged(isPackaged).version(appVersion).build();
 
-        app = device.describe(Application.class, localAppDescription);
+        this.app = device.describe(Application.class, localAppDescription);
     }
 
-    public Application getApp() {
-        return this.app;
-    }
+    public Application getApp() { return this.app; }
 
     public void setInstallApp(Boolean install_app){
         this.installApp = install_app;
@@ -109,9 +104,7 @@ public class MobileLabUtils {
     public void setPackaged(boolean packaged){
         this.packaged = packaged;
     }
-    public boolean isPackaged() {
-        return packaged;
-    }
+    public boolean isPackaged() { return packaged; }
 
     public void setAppIdentifier(String appIdentifier) {
         this.appIdentifier = appIdentifier;
